@@ -1,0 +1,45 @@
+.fullpage.horizontal .section.current {
+    transform: translate3d(0, 0, 0);
+}
+
+.fullpage.horizontal .section.down {
+    transform: translate3d(100%, 0, 0);
+}
+
+.fullpage.horizontal .section.up {
+    transform: translate3d(-100%, 0, 0);
+}
+
+
+/*  ENTER X AXIS  */
+@keyframes enter {100% {transform: translate3d(0, 0, 0);}}
+
+/*  this class covers exiting to the top  */
+@keyframes exit_left {100% {transform: translate3d(-100%, 0, 0);}}
+
+/*  this class covers exiting to the top  */
+@keyframes exit_right {100% {transform: translate3d(100%, 0, 0);}}
+
+
+
+.fullpage.vertical .section.current {
+    transform: translate3d(0, 0, 0);
+}
+
+.fullpage.vertical .section.down {
+    transform: translate3d(0, 100%, 0);
+}
+
+.fullpage.vertical .section.up {
+    transform: translate3d(0, -100%, 0);
+}
+
+
+/*  ENTER X AXIS  */
+@keyframes enter_y {100% {transform: translate3d(0, 0, 0);}}
+
+/*  this class covers exiting to the top  */
+@keyframes exit_top {100% {transform: translate3d(0, -100%, 0);}}
+
+/*  this class covers exiting to the top  */
+@keyframes exit_bottom {100% {transform: translate3d(0, 100%, 0);}}

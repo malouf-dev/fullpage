@@ -1,6 +1,6 @@
 
 const fullpage = document.querySelector('.fullpage');
-const direction = 'horizontal';
+const direction = 'vertical';
 const infinite = true;
 
 let canScroll = true;
@@ -11,14 +11,15 @@ let scrollListener = function(e) {
     if(e.deltaY > 0) fsScroll('down');
 };
 
-
-window.addEventListener('wheel', function(e){
-    console.log(e.deltaY);
-});
-
 const animations = {
-    down: {current: 'exit_left'},
-    up: {current: 'exit_right'},
+    horizontal: {
+        down: {current: 'exit_left'},
+        up: {current: 'exit_right'}
+    },
+    vertical: {
+        down: {current: 'exit_top'},
+        up: {current: 'exit_bottom'}
+    }
 };
 
 function fsScroll(path) {
@@ -38,9 +39,9 @@ function fsScroll(path) {
     });
 
     next.classList.add('active');
-    current.style.animationName = animations[path].current;
-    document.querySelector('body').style.background = next.style.background;
-    next.style.animationName = 'enter_x';
+    current.style.animationName = animations[direction][path].current;
+    //document.querySelector('body').style.background = next.style.background;
+    next.style.animationName = 'enter';
 }
 
 function fsArrange(current = document.querySelector('.current')) {

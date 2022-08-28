@@ -20,6 +20,7 @@ body, html {
     display: none;
     justify-content: center;
     align-items: center;
+    background: white;
 }
 
 .content-block {
@@ -29,13 +30,12 @@ body, html {
     font-family: 'Arial';
     font-weight: 700;
     text-align: center;
-    color: white;
     will-change: transform;
 }
 
 .section.current, .section.down.active, .section.up.active {
     display: flex;
-    animation-duration: .8s;
+    animation-duration: .6s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
 }
@@ -43,25 +43,3 @@ body, html {
 .section.active {
     pointer-events: none !important;
 }
-
-.fullpage.horizontal .section.current {
-    transform: translate3d(0, 0, 0);
-}
-
-.fullpage.horizontal .section.down {
-    transform: translate3d(100%, 0, 0);
-}
-
-.fullpage.horizontal .section.up {
-    transform: translate3d(-100%, 0, 0);
-}
-
-
-/*  ENTER X AXIS  */
-@keyframes enter_x {100% {transform: translate3d(0, 0, 0);}}
-
-/*  this class covers exiting to the top  */
-@keyframes exit_left {100% {transform: translate3d(-100%, 0, 0);}}
-
-/*  this class covers exiting to the top  */
-@keyframes exit_right {100% {transform: translate3d(100%, 0, 0);}}
